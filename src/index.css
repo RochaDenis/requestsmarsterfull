@@ -1,0 +1,47 @@
+/* styles.css */
+
+/* Reset de estilos para garantir consistência entre navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos globais para a aplicação */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  color: #f3f2f2;
+}
+
+h1 {
+  
+  margin-bottom: 20px;
+}
+
+/* Estilos para os componentes */
+/* Componente Solicitacoes */
+.solicitacoes {
+  margin-bottom: 40px;
+}
+
+/* Componente Dashboard */
+.dashboard {
+  margin-bottom: 40px;
+}
+
+/* Componente GerenciamentoCodigo */
+.gerenciamento-codigo {
+  margin-bottom: 40px;
+}
+
+/* Componente IntegracaoControleVersao */
+.integracao-controle-versao {
+  margin-bottom: 40px;
+}
+
+/* Componente FeedbackNotificacoes */
+.feedback-notificacoes {
+  margin-bottom: 40px;
+}
+
