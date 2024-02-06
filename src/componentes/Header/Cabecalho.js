@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
-const Div = styled.div`
+const Header = styled.div`
   width: 100%;
   height: 50px;
   background-color: white;
   color: black;
   font-size: 16px;
-  display: flex;
   justify-content: center;
+  display: flex;
 `;
 
 
 const Cabecalho = () => {
   return(
-    <Div>
+    <Header>
       <h1>Solicitações</h1>
-    </Div>
+    </Header>
   )
 };
 

@@ -9,18 +9,7 @@ const Form = styled.form`
   border-radius: 5px;
   cursor: pointer;
   display: flex;
-  text-align: center;
-  margin-left: 50px;
-  margin-top: 50px;
-
-  .input {
-    width: 100px;
-  }
-  
-
-  /* &:hover {
-    background-color: #000000;
-  } */
+  flex-direction: column; /* Alteração aqui para empilhar verticalmente */
 `;
 
 const Div = styled.div`
@@ -30,6 +19,31 @@ const Div = styled.div`
   background-color: aliceblue;
   width: 1000px;
   height: 500px;
+`;
+
+const InputTitulo = styled.input`
+  width: 100%; /* Alteração aqui para ocupar toda a largura disponível */
+  max-width: 1000px; /* Definindo largura máxima para evitar que se estenda */
+  height: 40px;
+
+  
+`;
+
+const Textarea = styled.textarea`
+  width: 100%; /* Alteração aqui para ocupar toda a largura disponível */
+  height: 100px;
+  margin-top: 10px;
+`;
+
+const SelectCategoria = styled.select`
+  width: 200px; /* Alteração aqui para ocupar toda a largura disponível */
+`;
+
+const ButtonSubmit = styled.button`
+  width: 150px;
+  height: 50px;
+  margin-left: 400px;
+  margin-top: 100px;
 
 `;
 
@@ -52,25 +66,26 @@ const FormularioSolicitacao = ({ onSubmit }) => {
   return (
     <Div>
       <Form onSubmit={handleSubmit}>
-        <input
+        <InputTitulo
           type="text"
           value={titulo}
           onChange={(e) => setTitulo(e.target.value)}
           placeholder="Título"
           required
         />
-        <textarea
+        <Textarea
           value={descricao}
           onChange={(e) => setDescricao(e.target.value)}
           placeholder="Descrição"
           required
         />
+        <div>
         <input
           type="date"
           value={dataVencimento}
           onChange={(e) => setDataVencimento(e.target.value)}
         />
-        <select
+        <SelectCategoria
           value={categoria}
           onChange={(e) => setCategoria(e.target.value)}
           required
@@ -79,8 +94,9 @@ const FormularioSolicitacao = ({ onSubmit }) => {
           <option value="categoria1">Categoria 1</option>
           <option value="categoria2">Categoria 2</option>
           <option value="categoria3">Categoria 3</option>
-        </select>
-        <button type="submit">Enviar Solicitação</button>
+        </SelectCategoria>
+        </div>
+        <ButtonSubmit type="submit">Enviar Solicitação</ButtonSubmit>
       </Form>
     </Div>
   );
