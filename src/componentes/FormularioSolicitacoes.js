@@ -25,18 +25,36 @@ const InputTitulo = styled.input`
   width: 100%; /* Alteração aqui para ocupar toda a largura disponível */
   max-width: 1000px; /* Definindo largura máxima para evitar que se estenda */
   height: 40px;
-
-  
+  border-radius: 10px;
+  border-color: silver;
 `;
 
 const Textarea = styled.textarea`
   width: 100%; /* Alteração aqui para ocupar toda a largura disponível */
   height: 100px;
-  margin-top: 10px;
+  margin-top: 0px;
+  border-radius: 10px;
+  border-color: silver;
 `;
 
 const SelectCategoria = styled.select`
   width: 200px; /* Alteração aqui para ocupar toda a largura disponível */
+  margin-top: 5px;
+  height: 30px;
+  margin-left: 20px;
+  border-color: silver;
+  border-radius: 5px;
+  box-shadow: black;
+  border: -30px;
+`;
+
+const Inputdata = styled.input`
+  height: 30px;
+  border-color: silver;
+  border-radius: 5px;
+  box-shadow: black;
+  border: -30px;
+  
 `;
 
 const ButtonSubmit = styled.button`
@@ -44,7 +62,16 @@ const ButtonSubmit = styled.button`
   height: 50px;
   margin-left: 400px;
   margin-top: 100px;
+  border-color: silver;
+  border-radius: 10px;
+  box-shadow: black;
+  border: -30px;
+`;
 
+const H3 = styled.h3`
+  margin-top: 10px;
+  color: black;
+  margin-left: 5px;
 `;
 
 const FormularioSolicitacao = ({ onSubmit }) => {
@@ -66,35 +93,37 @@ const FormularioSolicitacao = ({ onSubmit }) => {
   return (
     <Div>
       <Form onSubmit={handleSubmit}>
+        <H3>Título</H3>
         <InputTitulo
           type="text"
           value={titulo}
           onChange={(e) => setTitulo(e.target.value)}
-          placeholder="Título"
+          // placeholder="Título"
           required
         />
+        <H3>Descrição</H3>
         <Textarea
           value={descricao}
           onChange={(e) => setDescricao(e.target.value)}
-          placeholder="Descrição"
+          // placeholder="Descrição"
           required
         />
         <div>
-        <input
-          type="date"
-          value={dataVencimento}
-          onChange={(e) => setDataVencimento(e.target.value)}
-        />
-        <SelectCategoria
-          value={categoria}
-          onChange={(e) => setCategoria(e.target.value)}
-          required
-        >
-          <option value="">Selecione a categoria</option>
-          <option value="categoria1">Categoria 1</option>
-          <option value="categoria2">Categoria 2</option>
-          <option value="categoria3">Categoria 3</option>
-        </SelectCategoria>
+          <Inputdata
+            type="date"
+            value={dataVencimento}
+            onChange={(e) => setDataVencimento(e.target.value)}
+          />
+          <SelectCategoria
+            value={categoria}
+            onChange={(e) => setCategoria(e.target.value)}
+            required
+          >
+            <option value="">Selecione a categoria</option>
+            <option value="categoria1">Compras</option>
+            <option value="categoria2">Vendas</option>
+            <option value="categoria3">RH</option>
+          </SelectCategoria>
         </div>
         <ButtonSubmit type="submit">Enviar Solicitação</ButtonSubmit>
       </Form>
