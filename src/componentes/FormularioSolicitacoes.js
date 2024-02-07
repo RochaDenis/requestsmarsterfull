@@ -19,6 +19,7 @@ const Div = styled.div`
   background-color: aliceblue;
   width: 1000px;
   height: 500px;
+  line-height: 50px;
 `;
 
 const InputTitulo = styled.input`
